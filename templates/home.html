@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block content %}
+	<div>
+
+		DIV equal to "mainBody"
+		<br><br>
+		<p>
+		This will be my main text
+		</p>
+		<br><br>
+		<p>
+		This is where we will talk about how many boats there were
+		</p>
+		<br>
+
+		<!-- Popup with just CSS -->
+		<h1>Popup/Modal Windows without JavaScript</h1>
+		<div class="box">
+			<a class="button" href="#popup1">Let me Pop up</a>
+		</div>
+
+		<div id="popup1" class="overlay">
+			<div class="popup">
+				<h2>Here i am</h2>
+				<a class="close" href="#">&times;</a>
+				<div class="content">
+					Thank to pop me out of that button, but now i'm done so you can close this window.
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+{% endblock content %}

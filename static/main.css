@@ -1,0 +1,176 @@
+html {
+	background-color: #e0e0eb;
+	font-family: trebuchet MS, Bookman Old Style, palatino;
+
+}
+
+main{
+	display: block;
+
+}
+
+.header {
+    position: relative;
+    float: left;
+	margin: 0px;
+	text-align: center;
+	border-radius: 10px;
+    color: white;
+    font-family: trebuchet MS, Bookman Old Style, palatino;
+    width: 100%;
+    height: 250px;
+    display: grid;
+    grid-template-areas:
+        "site_links site_links site_links site_links"
+        "page_icon title title bio_links"
+        "page_links page_links page_links page_links"
+
+}
+
+.site_links {
+    alignment: left;
+    width: 100%;
+    grid-area: site_links;
+}
+
+.site_links li {
+    display: inline-block;
+	font-size: 20px;
+	text-align: centre;
+    width: 22%;
+    background-color: #e96508;
+    border-radius: 5px;
+
+}
+
+.bio_links{
+    position: relative;
+    float: right;
+    list-style: none;
+    font-size: 20px;
+    grid-area: bio_links;
+}
+
+.page_links {
+    alignment: left;
+    width: 100%;
+    grid-area: page_links;
+}
+.page_links li {
+	display: inline-block;
+	font-size: 20px;
+	text-align: centre;
+    width: 22%;
+    background-color: #e96508;
+    border-radius: 5px;
+}
+
+.page_icon{
+    grid-area: page_icon;
+    height: 75px;
+    border-radius: 10px 0 0 0;
+    margin: 10px 0 0 20px;
+    position: relative;
+    float: left;
+}
+
+.header h2{
+    font-size: 3em;
+    position: relative;
+    float: left;
+}
+
+.mainBody {
+    position: relative;
+    float: left;
+	padding-left: 15px;
+	padding: 20px;
+	width: 80%;
+	float: left;
+}
+
+
+/* Pop up with just CCS */
+.box {
+  width: 40%;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.2);
+  padding: 35px;
+  border: 2px solid #fff;
+  border-radius: 20px/50px;
+  background-clip: padding-box;
+  text-align: center;
+}
+
+.button {
+  font-size: 1em;
+  padding: 10px;
+  color: #fff;
+  border: 2px solid #06D85F;
+  border-radius: 20px/50px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+.button:hover {
+  background: #06D85F;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: #06D85F;
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+@media screen and (max-width: 700px){
+  .box{
+    width: 70%;
+  }
+  .popup{
+    width: 70%;
+  }
+}
+
