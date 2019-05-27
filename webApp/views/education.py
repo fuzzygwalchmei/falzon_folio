@@ -6,6 +6,9 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 import random
 
+page_config = {"colour": "#339966", "icon": "educate.png", "title": "Falzon Folio: Education", "links": {
+    "cards": "./pick_a_card", "highest": "https://google.com"}}
+
 dataToRender={}
 SUITS={"H":"Hearts","D":"Diamonds","C":"Clubs","S":"Spades"}
 CARDS={"A":"Ace","2":"Two","3":"Three","4":"Four","5":"Five","6":"Six","7":"Seven","8":"Eight","9":"Nine","10":"Ten","J":"Jack","Q":"Queen","K":"King"}
@@ -23,9 +26,6 @@ def change_card():
     imgText=CARDS[card_number]+" of "+SUITS[card_suit]
     imgCard = card_number+card_suit+".jpg"
     return {"image": imgText, "card": imgCard}
-
-page_config = {"colour": "green", "icon": "educate.png", "title": "Falzon Folio: Education", "links": {
-    "cards": "./pick_a_card", "highest": "https://google.com"}}
 
 @education_blueprint.route('/')
 def index():

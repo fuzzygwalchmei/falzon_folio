@@ -2,7 +2,7 @@ from flask import Blueprint, render_template
 
 blog_blueprint = Blueprint('blog', __name__)
 
-page_config = {"colour": "blue", "icon": "blog.png", "title": "Falzon Folio: Blog", "links": {
+page_config = {"colour": "#4080BF", "icon": "blog.png", "title": "Falzon Folio: Blog", "links": {
     "about": "https://google.com", "personal": "https://google.com"}}
 
 @blog_blueprint.route('/')

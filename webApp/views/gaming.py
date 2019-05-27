@@ -7,7 +7,7 @@ from wtforms import StringField, SubmitField
 
 gaming_blueprint = Blueprint('gaming', __name__)
 
-page_config = {"colour": "red", "icon":"gaming.png", "title": "Falzon Folio: Gaming", "links":
+page_config = {"colour": "#6699FF", "icon":"gaming.png", "title": "Falzon Folio: Gaming", "links":
     {"diceroller": "./diceroller", "characters": "https://google.com"}}
 
 diceRegex = "[\d?]d[\d]"
