@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template, redirect, url_for
 
 from views.education import education_blueprint
 from views.gaming import gaming_blueprint
@@ -15,4 +15,5 @@ app.register_blueprint(blog_blueprint, url_prefix="/blog")
 
 @app.route("/")
 def index():
-    return redirect("http://fuzzygwalchmei.pythonanywhere.com/blog/")
+    return render_template("home.html")
+
