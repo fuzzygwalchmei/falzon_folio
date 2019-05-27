@@ -1,0 +1,35 @@
+<html>
+   <!--Base head, include CSS -->
+    <head>
+        <link rel="stylesheet" type="text/css" href="/static/main.css">
+        {% block head %} {% endblock %}
+    </head>
+    <!-- Include header with site links, dynamic icon, dynamic title, bio links and dynamic page links per site -->
+    <body>
+        <div class="head">
+        <!-- Site links across the top of the page -->
+        <ul class="site-links">
+            <a href="">Blog</a>
+            <a href="">Gaming</a>
+            <a href="">Education</a>
+        </ul>
+        <!-- Dynamic icon -->
+        <img src="{{ page icon }}">
+        <!-- Dynamic title, eg Falzon Folio: Education -->
+        <h2>Falzon Folio: {{ page_config["title"] }}</h2>
+        <!-- Static bio links: linkedin, github, twitter  -->
+        <ul class="bio-links">
+            <li><a href="">Linkedin</a></li>
+            <li><a href="">Github</a></li>
+            <li><a href="">twitter</a></li>
+        </ul>
+        <!-- Dynamic page links -->
+        {% block page_links %} {% endblock %}
+        </div>
+
+        <div class="main">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body>
+</html>

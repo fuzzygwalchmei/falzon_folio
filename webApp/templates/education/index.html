@@ -1,0 +1,27 @@
+{% extends 'core_layout.html' %}
+
+{% block head %}
+<title> {{ page_config["title"] }} </title>
+<style class="text/css">
+    .header {
+        background-color: {{ page_config["colour"] }};
+    }
+</style>
+{% endblock %}
+
+{% block page_icon %}
+<img src="{{url_for('static',filename=page_config['icon'])}}" />
+{% endblock %}
+
+{% block page_links %}
+<ul class="page_links">
+    {% for each in page_config["links"] %}
+        <li><a href="{{ page_config['links'][each] }}">{{ each }}</a> </li>
+    {% endfor %}
+</ul>
+{% endblock %}
+
+{% block content %}
+    This is the {{ details }} page!
+
+{% endblock %}

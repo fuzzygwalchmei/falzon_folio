@@ -1,0 +1,21 @@
+{% extends "core_layout.html" %}
+
+{% block content %}
+    <div align="center">
+        <form action="" method="post">
+            {{ form.submit() }}
+        </form>
+        <br>
+        <img class="card_logo" src="{{url_for('static', filename='cards/'+cardValue['card'])}}">
+
+        <br>
+        <h3>{{ cardValue['image'] }}</h3>
+        <br>
+
+    </div>
+
+
+
+
+
+{% endblock content %}

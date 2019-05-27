@@ -1,0 +1,44 @@
+<html>
+   <!--Base head, include CSS -->
+    <head>
+        <link rel="stylesheet" type="text/css" href="/static/main.css">
+        <title> {{ page_config["title"] }} </title>
+        <style class="text/css">
+            .header {
+                background-color: {{ page_config["colour"] }};
+            }
+        </style>
+    </head>
+    <!-- Include header with site links, dynamic icon, dynamic title, bio links and dynamic page links per site -->
+    <body>
+        <div class="header">
+            <!-- Site links across the top of the page -->
+            <ul class="site_links">
+                <li><a href="../blog">Blog</a></li>
+                <li><a href="../gaming">Gaming</a></li>
+                <li><a href="../education">Education</a></li>
+            </ul>
+            <!-- Dynamic icon -->
+            <img src="{{url_for('static',filename=page_config['icon'])}}" />
+            <!-- Dynamic title, eg Falzon Folio: Education -->
+            <h2>{{ page_config["title"] }}</h2>
+            <!-- Static bio links: linkedin, github, twitter  -->
+            <ul class="bio_links">
+                <li><a href="https://www.linkedin.com/in/marc-falzon-4aa5a64/">Linkedin</a></li>
+                <li><a href="https://github.com/fuzzygwalchmei">GitHub</a></li>
+                <li><a href="https://twitter.com/gwalmachi">Twitter</a></li>
+            </ul>
+            <!-- Dynamic page links -->
+            <ul class="page_links">
+                {% for each in page_config["links"] %}
+                    <li><a href="{{ page_config['links'][each] }}">{{ each }}</a> </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="main">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body>
+</html>
