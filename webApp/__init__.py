@@ -4,7 +4,7 @@ from .views.education import education_blueprint
 from .views.gaming import gaming_blueprint
 from .views.blog import blog_blueprint
 from .views.home import home_blueprint
-from .views.api import api_bp
+# from .views.api import api_bp
 
 
 
@@ -16,4 +16,4 @@ app.register_blueprint(home_blueprint, url_prefix="/home")
 app.register_blueprint(education_blueprint, url_prefix="/education")
 app.register_blueprint(gaming_blueprint, url_prefix="/gaming")
 app.register_blueprint(blog_blueprint, url_prefix="/blog")
-app.register_blueprint(api_bp, url_prefix="/api")
+# app.register_blueprint(api_bp, url_prefix="/api")

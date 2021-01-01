@@ -27,9 +27,9 @@ def change_card():
     """
     card_suit = random.choice(list(SUITS.keys()))
     card_number = random.choice(list(CARDS.keys()))
-    imgText = CARDS[card_number]+" of "+SUITS[card_suit]
-    imgCard = card_number+card_suit+".jpg"
-    return {"image": imgText, "card": imgCard}
+    img_text = CARDS[card_number]+" of "+SUITS[card_suit]
+    img_card = card_number+card_suit+".jpg"
+    return {"image": img_text, "card": img_card}
 
 
 @education_blueprint.route('/')
@@ -41,7 +41,7 @@ def index():
 def education():
     form=frmPickaCard()
     if request.method == 'POST':
-        cardValue=change_card()
-        return render_template('education/card_show.html', form=form, page_config=page_config, cardValue=cardValue)
+        card_value=change_card()
+        return render_template('education/card_show.html', form=form, page_config=page_config, cardValue=card_value)
     if request.method == 'GET':
         return render_template('education/pick_a_card.html', form=form, page_config=page_config)
