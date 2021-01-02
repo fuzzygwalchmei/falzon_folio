@@ -6,11 +6,14 @@ from .views.blog import blog_blueprint
 from .views.home import home_blueprint
 from .views.api import api_bp
 
+from dotenv import load_dotenv
+import os
+load_dotenv()
 
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY']='you_will_never_know'
+app.config['SECRET_KEY']=os.getenv('secret_key')
 
 app.register_blueprint(home_blueprint, url_prefix="/home")
 app.register_blueprint(education_blueprint, url_prefix="/education")
