@@ -13,7 +13,7 @@ load_dotenv()
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY']=os.getenv('secret_key')
+app.config['SECRET_KEY']=os.environ.get('secret_key')
 
 app.register_blueprint(home_blueprint, url_prefix="/home")
 app.register_blueprint(education_blueprint, url_prefix="/education")
