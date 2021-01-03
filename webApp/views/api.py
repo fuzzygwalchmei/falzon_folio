@@ -10,10 +10,10 @@ api = Api(api_bp)
 
 #import saved ML model and vector
 import pickle
-nb_file = './webApp/views/Tfidf_model.sav'
+nb_file = './webApp/views/Count_model.sav'
 nb_classifier = pickle.load(open(nb_file, 'rb'))
-tfidf_file = './webApp/views/tfidf_vector.sav'
-tfidf = pickle.load(open(tfidf_file, 'rb'))
+vector_file = './webApp/views/count_vector.sav'
+vector = pickle.load(open(vector_file, 'rb'))
 
 class ml_schema(Schema):
     text = fields.Str(required=True)
@@ -26,9 +26,9 @@ class MLAPI(Resource):
         parser = request.args
         text = parser['text']
         text = text.lower().replace('[^a-zA-Z\s\@]', '')
-        tfidf_new = tfidf.transform([text])
-        pred = nb_classifier.predict(tfidf_new)
-        prob = nb_classifier.predict_proba(tfidf_new)
+        vectored_new = vector.transform([text])
+        pred = nb_classifier.predict(vectored_new)
+        prob = nb_classifier.predict_proba(vectored_new)
         print(f"predication made: {pred}")
         print({f"Prob: {prob}"})
         response = make_response(jsonify(
