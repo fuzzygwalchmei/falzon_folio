@@ -29,11 +29,15 @@ class MLAPI(Resource):
         vectored_new = vector.transform([text])
         pred = nb_classifier.predict(vectored_new)
         prob = nb_classifier.predict_proba(vectored_new)
+
+        p_prob = nb_classifier.predict_proba(vectored_new)[0]
+        print(f"I expect, with {max(p_prob)*100:.2f}% certainty, that this is should be {'an Incident' if pred == ['IR'] else 'a Request'}\n")
+
         print(f"predication made: {pred}")
-        print({f"Prob: {prob}"})
+        print({f"Prob: {p_prob}"})
         response = make_response(jsonify(
             {'prediction':str(pred[0]),
-            'probability': str(prob)}
+            'probability': f"{max(p_prob)*100:.2f}%"}
 
 
         ))
